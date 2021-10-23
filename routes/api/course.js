@@ -1,5 +1,7 @@
 const express = require('express');
-const Course = require('../../models/course');
+const { Course } = require('../../models/course');
+const Resources = require('../../models/coursesegment.schema');
+const Flashcard = require('../../models/flashcard.schema');
 
 const route = express.Router();
 
@@ -17,6 +19,36 @@ route.get('/courseList', async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(404).json({error});
+    }
+})
+
+route.post('/add', express.json(), async (req, res) => {
+    const {resources, flashcards, ...data} = req.body;
+    try {
+        let arr = [];
+        resources.forEach(resource => {
+            arr.push(new Resources({...resource}));
+        })
+
+        let flash = [];
+        flashcards.forEach(flashcard => {
+            flash.push(new Flashcard({...flashcard}));
+        })
+
+        let course = await Course.create({
+            ...data,
+            segments: arr,
+            flashcards: flash,
+            reviews: null
+        });
+
+        console.log('successfully added a course');
+        res.status(200).json(course);
+        return;
+        
+    } catch (error) {
+        console.error(error);
+        return res.status(400).json({error});   
     }
 })
 

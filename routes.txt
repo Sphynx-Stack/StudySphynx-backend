@@ -3,5 +3,7 @@
         /login -> Login User
         /register -> Registering new User
         /courses -> Displaying all courses
+            /courses_add
+            
         /user -> User Landing
             /friend/:frieind_id ->
