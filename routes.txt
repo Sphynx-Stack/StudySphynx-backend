@@ -1,0 +1,7 @@
+/  
+    /api
+        /login -> Login User
+        /register -> Registering new User
+        /courses -> Displaying all courses
+        /user -> User Landing
+            /friend/:frieind_id ->
