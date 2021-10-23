@@ -39,7 +39,7 @@ route.post('/add', express.json(), async (req, res) => {
             ...data,
             segments: arr,
             flashcards: flash,
-            reviews: null
+            reviews: []
         });
 
         console.log('successfully added a course');
@@ -48,7 +48,7 @@ route.post('/add', express.json(), async (req, res) => {
         
     } catch (error) {
         console.error(error);
-        return res.status(400).json({error});   
+        return res.status(400).json({error});
     }
 })
 
