@@ -2,6 +2,8 @@ const express = require('express');
 const connectDB = require('../../data/db');
 const dotenv = require('dotenv').config()
 const path = require('path');
+const cookierParser = require('cookie-parser');
+
 const app = express();
 
 connectDB();
@@ -9,6 +11,7 @@ connectDB();
 // middlewares
 app.use(express.static(path.join(__dirname ,'public')));
 app.use(express.json());
+app.use(cookierParser());
 
 app.use('/api', require('./routes/api'));
 
