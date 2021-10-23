@@ -33,7 +33,7 @@ route.post('/',express.json(), async (req, res) => {
         });
         
         res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000, sameSite:'lax' });
-        return res.status(201).json({user:"Login Success", redirect:"/maps"});
+        return res.status(201).json({user:"Login Success", redirect:"/dashboard.html"});
 
     } catch (err) {
         res.status(400).json({ errors: Object.values(err) });

@@ -1,5 +1,5 @@
-const express = require('express');
-const connectDB = require('../../data/db');
+const express = require("express");
+const connectDB = require('./data/db');
 const dotenv = require('dotenv').config()
 const path = require('path');
 const cookierParser = require('cookie-parser');

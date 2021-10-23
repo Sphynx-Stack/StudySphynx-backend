@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" href="css/pricing.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<style>
+	form{
+		text-align: center;
+	}
+	button{
+		padding: 10px 20px;
+	}
+	</style>
+</head>
+<body>
+	<nav class="fh5co-nav" role="navigation">
+		
+		<div class="top-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-2">
+						<div id="fh5co-logo"><a href="index.html"><i class="icon-study"></i>Educ<span>.</span></a></div>
+					</div>
+					<div class="col-xs-10 text-right menu-1">
+						<ul>
+							<li class="active"><a href="index.html"><b>Home</b></a></li>
+							<li><a href="courses.html"><b>Courses</b></a></li>
+							<!-- <li><a href="teacher.html">Teacher</a></li> -->
+							<li><a href="about.html"><b>About</b></a></li>
+							<!-- <li><a href="pricing.html">Login</a></li> -->
+						
+							<li><a href="contact.html"><b>Contact</b></a></li>
+							&nbsp;
+							<li class="btn-cta"><a href="pricing.html"><span>Login</span></a></li>
+							&nbsp;&nbsp;
+							<li class="btn-cta"><a href="register.html"><span>Register</span></a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</nav>
+	<div class="container" onclick="onclick">
+		<div class="top"></div>
+		<div class="bottom"></div>
+		<div class="center">
+			<form action="/login" method="post" class="LOG">
+				<h2>Please Sign In</h2>
+				<input type="email" id="email" placeholder="email" name="email" />
+				<input type="password" placeholder="password" name="password" id="pass" />
+				<h2>&nbsp;</h2>
+				<button type="submit">Sign In</button>
+			</form>
+		</div>
+	</div>
+	<script>
+			async function connect(d1, dest) {
+                const res = await fetch(`/api/${dest}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(d1)
+                });
+
+                const data = await res.json();
+                return data;
+            }
+
+            function connection(data ,dest) {
+                connect(data, dest).then(response => {
+                    window.location.href = response.redirect;
+                    console.log(response.msg);
+                }).catch(err => console.log(err));
+            }
+
+            document.querySelector('.LOG').addEventListener('submit', function(e){
+                e.preventDefault();
+                console.log('logging in');
+                let password = document.querySelector('#pass').value;
+                let email = document.querySelector('#email').value;
+                connection({password, email}, 'login');
+            })
+	</script>
+</body>
+</html>

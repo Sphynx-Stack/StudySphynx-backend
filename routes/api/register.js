@@ -47,7 +47,7 @@ route.post('/',express.json(), async (req, res) => {
             });
 
             console.log('Succesfully new user created');
-            res.status(201).json({ msg: 'success redirecting to home', redirect: 'feature.html' });
+            res.status(201).json({ msg: 'success redirecting to home', redirect: 'pricing.html' });
             return;
         }
         
