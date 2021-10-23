@@ -47,6 +47,7 @@
     
         <!-- Theme style  -->
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/card.css">
     
         <!-- Modernizr JS -->
         <script src="js/modernizr-2.6.2.min.js"></script>
@@ -98,7 +99,7 @@
         <div class="popular-courses">
             <h3>Popular Courses</h3>
             <div class="cards-popular">
-                
+
             </div>
         </div>
 
@@ -120,16 +121,25 @@
             function call(cards){
                 for(let i=0; i<4; i++){
                     let div = document.createElement('div');
-                    div.innerText = `Card-${i + 1}`;
+                    div.classList.add('card');
+
+                    div.innerHTML = `<div class="content">
+                            <h2 class="title">Mountain View</h2>
+                            <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p><button class="btn">View Trips</button>
+                        </div>`
                     cards.appendChild(div);
                 }
             }
 
             document.addEventListener('DOMContentLoaded', (e)=>{
                 let cardsDiv = document.querySelector('.cards-recent');
-                for(let i=0; i<3; i++){
+                for(let i=0; i<4; i++){
                     let div = document.createElement('div');
-                    div.innerText = `Card-${i + 1}`;
+                    div.classList.add('card');
+                    div.innerHTML = `<div class="content">
+                            <h2 class="title">Mountain View</h2>
+                            <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p><button class="btn">View Trips</button>
+                        </div>`
                     cardsDiv.appendChild(div);
                 }
                 
