@@ -144,4 +144,37 @@ route.put('/:course_id/notes', userID, async (req, res)=>{
     }
 })
 
+// GET -> () => Get all Notes
+route.get('/notes', userID, async (req, res)=>{
+    try{
+        let user = await User.findOne({ user_id : req.user_id });
+        if(!user){
+            return res.json({msg: "User not found"});
+        }
+        return res.json({user.notes});
+    }catch(error){
+        console.error(error);
+        return res.status(500).json({error});
+    }
+})
+
+// GET -> (:cid) => Get Notes for c course
+route.get('/:course_id/notes', userID, async (req, res)=>{
+    try{
+        let user = await User.findOne({ user_id : req.user_id });
+        if(!user){
+            return res.json({msg: "User not found"});
+        }
+        user.notes.forEach(({content, course})=>{
+            if(course === req.params.course_id){
+                return res.json({content, course});
+            }
+        })
+        return res.json({msg: "Notes not found"});
+    }catch(error){
+        console.error(error);
+        return res.status(500).json({error});
+    }
+})
+
 module.exports = route;
