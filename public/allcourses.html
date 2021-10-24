@@ -122,7 +122,7 @@
             </div>
         </div> -->
 
-        <script>
+        <script async>
             // function call(cards){
             //     for(let i=0; i<12; i++){
             //         let div = document.createElement('div');
@@ -136,17 +136,32 @@
             //     }
             // }
 
-            document.addEventListener('DOMContentLoaded', (e)=>{
+            async function connect(dest) {
+                const res = await fetch(`/api/${dest}`, {
+                    method: 'GET'
+                });
+                const data = await res.json();
+                return data;
+            }
+            
+            async function connection(dest) {
+                let data = await connect(dest);
+                console.log(data, "data");
+                return data.user;
+            }
+            let idx = 0;
+            
+            document.addEventListener('DOMContentLoaded', async (e)=>{
                 let cardsDiv = document.querySelector('.cards-recent');
-             
+                let data = await connection('course');             
                 
                 for(let j=0; j<12; j++){   
                     let div = document.createElement('div');
 
                     div.classList.add('card');
-                    div.innerHTML = `<div class="content bg-light" >
-                            <h2 class="title bg-light">Mountain View</h2>
-                            <p class="copy text-secondary">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p><button class="btn">View Course</button>
+                    div.innerHTML = `<div class="content bg-light">
+                            <h2 class="title bg-light">${data[idx].name}</h2>
+                            <p class="copy text-secondary">${data[idx++].description}</p><button id=${data[idx]._id} class="btn btn-click">View Course</button>
                         </div>`
                     cardsDiv.appendChild(div);
                 }
@@ -160,8 +175,15 @@
                 // call(created);
             })
 
+            setTimeout(()=> {
+                document.querySelector('.btn-click').addEventListener('click', (e)=> {
+                    console.log('clickingngngn');
+                    window.location.href = '/viewcourse.html';
+                })
+            }, 2000)
+            
         </script>
-        <script src="js/logout.js"></script>
+        <script async src="js/logout.js"></script>
 
 
 </body>
