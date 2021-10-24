@@ -22,17 +22,20 @@ route.post('/',express.json(), async (req, res) => {
         const user = await User.findOne({ email });
         const name = user.name;
         const identity = user._id;
-        const new_user = await UserData.create({
-            name,
-            bio: '',
-            recents: [],
-            courses: [],
-            usermadecourses: [],
-            notifications: [],
-            events: [],
-            user_id: identity,
-            friends: []
-        });
+        const checkUser = await UserData.findOne({ user_id });
+        if(checkUser){
+            const new_user = await UserData.create({
+                name,
+                bio: '',
+                recents: [],
+                courses: [],
+                usermadecourses: [],
+                notifications: [],
+                events: [],
+                user_id: identity,
+                friends: []
+            });
+        }
 
         if (user) {
             const auth = await bcrypt.compare(password, user.password);
