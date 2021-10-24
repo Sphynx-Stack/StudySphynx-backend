@@ -79,7 +79,7 @@ route.post('/:id', [userID ,express.json()], async (req, res) => {
         user.recents.unshift(req.params.id);
         user.recents.slice(0,4);
         await user.save();
-        return res.json({user});
+        return res.json(user);
     } catch (error) {
         console.error(error);
         return res.status(500).json({error});
@@ -115,5 +115,33 @@ route.get('/mycourses', [userID, express.json()], async(req, res)=>{
     }
 })
 
+// PUT -> (:cid) => Put notes in c course for user
+route.put('/:course_id/notes', userID, async (req, res)=>{
+    try {
+        let user = await User.findOne({ user_id : req.user_id });
+        if(!user){
+            return res.json({msg: "User not found"});
+        }
+        let crs = await Course.findById(req.params.course_id);
+        if(!crs){
+            return res.json({msg: "Course not found"});
+        }
+        if(user.notes.filter((n)=>n.course.toString === req.params.course_id)){
+            user.notes = user.notes.filter(
+                (n) => n.course.toString === req.params.course_id
+            );
+        }
+
+        user.notes.unshift({
+            content:req.body.content,
+            course:req.params.course_id
+        });
+        await user.save();
+        return res.json(user);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({error});
+    }
+})
 
 module.exports = route;
