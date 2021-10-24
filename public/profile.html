@@ -129,7 +129,7 @@
                         <div class="col-sm-3">
                           <h6 class="mb-0">Full Name</h6>
                         </div>
-                        <div class="col-sm-9 text-secondary">
+                        <div class="col-sm-9 text-secondary name-text">
                           Kenneth Valdez
                         </div>
                       </div>
@@ -138,7 +138,7 @@
                         <div class="col-sm-3">
                           <h6 class="mb-0">Bio</h6>
                         </div>
-                        <div class="col-sm-9 text-secondary">
+                        <div class="col-sm-9 text-secondary bio-text">
                           fip@jukmuh.al
                         </div>
                       </div>
@@ -193,6 +193,29 @@
     
             </div>
         </div>
+        <script>
+          async function connect(dest) {
+            const res = await fetch(`/api/${dest}`, {
+                method: 'GET'
+            });
+            const data = await res.json();
+            return data;
+          }
+          
+          function connection(dest) {
+            connect(dest).then(response => {
+              return response;
+            }).catch(err => console.log(err));
+          }
+          
+          document.addEventListener('DOMContentLoaded', (e) => {
+            let data = connection('user');
+            document.querySelector('.profile-name').textContent = data.name;
+            document.querySelector('.name-text').textContent = data.name;
+            document.querySelector('.profile-bio').textContent = data.bio;
+            document.querySelector('.bio-text').textContent = data.bio;
+          })
+          </script>
     <script src="js/logout.js"></script>
 </body>
 </html>
