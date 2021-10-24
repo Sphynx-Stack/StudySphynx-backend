@@ -146,25 +146,23 @@
          
         <script>
 			async function connect(d1) {
-                const res = await fetch(`/api/course/add`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(d1)
-                });
+          const res = await fetch(`/api/course/add`, {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(d1)
+          });
 
-                const data = await res.json();
-                return data;
-            }
+          const data = await res.json();
+          return data;
+      }
 
-            function connection(data) {
-                connect(data).then(response => {
-					return response;
-				}).catch(err => console.log(err));
-            }
+      // async function connection(data) {
 
-			document.querySelector('.create-course').addEventListener('submit', (e)=> 
+      // }
+
+			document.querySelector('.create-course').addEventListener('submit', async (e)=> 
 			{
 				e.preventDefault();
 				console.log('creationnn');
@@ -185,7 +183,8 @@
 					assessmentLink,
 					solutionlink: solLink
 				}
-				connection({name, description, tags, segments, flashcards:[], notes:'', rating:4});
+				let data = await connect({name, description, tags, segments, flashcards:[], notes:'', rating:4});
+        window.location.href = data.redirect;
 			})
 		</script>
         <script src="js/logout.js"></script>
