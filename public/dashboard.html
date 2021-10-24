@@ -119,7 +119,22 @@
         </div>
 
         <script>
-            function call(cards){
+            async function connect(dest) {
+                const res = await fetch(`/api/${dest}`, {
+                    method: 'GET'
+                });
+                const data = await res.json();
+                return data;
+            }
+            
+            function connection(dest) {
+                connect(dest).then(response => {
+                return response;
+                }).catch(err => console.log(err));
+            }
+          
+            async function call(cards){
+                let data = connection('course');
                 for(let i=0; i<4; i++){
                     let div = document.createElement('div');
                     div.classList.add('card');

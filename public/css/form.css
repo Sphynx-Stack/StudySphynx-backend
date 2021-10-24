@@ -10,7 +10,12 @@
   width: 60%;
   height: 100%;
 }
+
+/* .container{
+  height: 100vh;
+} */
+
 .container1 {
   background-color: aqua;
-  min-height: 60vhmin;
+  min-height: 100vh;
 }

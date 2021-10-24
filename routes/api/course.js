@@ -5,7 +5,7 @@ const { Course } = require('../../models/course');
 
 const route = express.Router();
 
-route.get('/courseList', async (req, res) => {
+route.get('/', async (req, res) => {
     try {
         let userMap = {};
         let users = await Course.find({});
