@@ -154,8 +154,9 @@
                     div.classList.add('card');
                     div.innerHTML = `<div class="content bg-light">
                             <h2 class="title bg-light">${data[idx].name}</h2>
-                            <p class="copy text-secondary">${data[idx++].description}</p><button id=${data[idx]._id} class="btn btn-click">View Course</button>
+                            <p class="copy text-secondary">${data[idx].description}</p><button id=${data[idx]._id} class="btn btn-click">View Course</button>
                         </div>`
+                        idx++;
                     cardsDiv.appendChild(div);
                 }
                 
@@ -169,14 +170,24 @@
             })
 
             setTimeout(()=> {
-                document.querySelector('.btn-click').addEventListener('click' ,async function (e) {
-                    console.log('clickingngngn');
-                    let id = this.getAttribute('id');
-                    let data = await connect(`course/${id}`);
-                    console.log(data);
-                    localStorage.setItem('data', JSON.stringify({...data}));
-                    window.location.href = '/viewcourse.html';
-                })
+                let buttons = document.querySelectorAll('.btn-click');
+
+                for(const button of buttons){
+                    button.addEventListener('click' ,async function (e) {
+                        // console.log(buttons.filter(x => x === e.target), e.target);
+                        console.log('clickingngngn');
+                        let id=this.getAttribute('id')
+                        let data = await connect(`course/${id}`);
+                        console.log(data);
+                        let copy = localStorage.getItem('data');
+                        if(copy){
+                            localStorage.removeItem('data');
+                        }
+                        copy = data;
+                        localStorage.setItem('data', JSON.stringify(copy));
+                        window.location.href = '/viewcourse.html';
+                    })
+                }
             }, 2000)
 
 

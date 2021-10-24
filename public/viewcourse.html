@@ -168,7 +168,7 @@
     <script>
       document.addEventListener('DOMContentLoaded', (e)=>{
         let data = JSON.parse(localStorage.getItem('data'));
-        localStorage.removeItem('data');
+        // localStorage.removeItem('data');
 
         console.log(data);
         let heading = document.querySelector('.heading1').textContent = data.name;
