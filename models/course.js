@@ -8,7 +8,15 @@ const CourseSchema = new Schema({
     name: String,
     description : String,
     tags : [String],
-    segments : [CourseSegmentSchema],
+    segments : [
+        {
+            title: String,
+            description : String,
+            link : [String],
+            assessmentlink : [String],
+            solutionlink : [String],
+        }
+    ],
     flashcards : [FlashcardSchema],
     notes : String,
     rating : Number,
