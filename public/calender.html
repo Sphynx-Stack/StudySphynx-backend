@@ -32,7 +32,6 @@
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/mynotes.css">
 
   <style>
     .change-card{
@@ -57,7 +56,8 @@
 							<!-- <li><a href="courses.html"><b>Recent Courses</b></a></li> -->
 							<!-- <li><a href="teacher.html">Teacher</a></li> -->
 							<li><a href="mycourses.html"><b>My courses</b></a></li>
-						
+              <li><a href="mynotes.html"><b>My Notes</b></a></li>
+
 							<li><a href="profile.html"><b>My profile</b></a></li>
                             <li><a href="create_a_course.html"><b>Create a course</b></a></li>
                             <li><a href="calender.html"><b>Calender</b></a></li>
@@ -72,9 +72,22 @@
 			</div>
 		</div>
 	</nav>
-    
+    <div class="container">
+        <div class="main-body">
+        
+              <!-- Breadcrumb -->
+              <nav aria-label="breadcrumb" class="main-breadcrumb">
+                <ol class="breadcrumb">
+                  <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">User Profile</li> -->
+                </ol>
+              </nav>
 
-  <div class="mynotes">My Notes</div>
+              <div class="calx-emd-cal" data-calendar="jV379560" data-configure="false"></div><script type="text/javascript">(function(){var e = document.createElement("script");e.type = "text/javascript";e.async = true;e.src = "https://calendarx.com/js/emd.cal.init.min.js";e.className = "calendarx-script";document.getElementsByTagName("body")[0].appendChild(e);})();
+              </script>
+          
+              <!-- <script src="./test.js"></script> -->
     <script src="js/logout.js"></script>
 </body>
 </html>
