@@ -151,7 +151,7 @@ route.get('/notes', userID, async (req, res)=>{
         if(!user){
             return res.json({msg: "User not found"});
         }
-        return res.json({user.notes});
+        return res.json(user.notes);
     }catch(error){
         console.error(error);
         return res.status(500).json({error});
