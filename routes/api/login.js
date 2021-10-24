@@ -22,7 +22,7 @@ route.post('/',express.json(), async (req, res) => {
         const user = await User.findOne({ email });
         const name = user.name;
         const identity = user._id;
-        const checkUser = await UserData.findOne({ user_id });
+        const checkUser = await UserData.findOne({ user_id : identity });
         if(checkUser){
             const new_user = await UserData.create({
                 name,
@@ -57,7 +57,8 @@ route.post('/',express.json(), async (req, res) => {
         return res.status(201).json({user:"Login Success", redirect:"/dashboard.html"});
 
     } catch (err) {
-        res.status(400).json({ errors: Object.values(err) });
+        console.log(err);
+        res.status(400).json({ errors: err });
     }
 });
 
