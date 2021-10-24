@@ -86,7 +86,7 @@
       
       </div>
       <div class="course-video">
-       <iframe width="900" height="550"
+       <iframe width="900" height="550" class="video-link"
        src="https://www.youtube.com/embed/tgbNymZ7vqY">
 
     </iframe>
@@ -96,7 +96,7 @@
       <div class="course-content">Web Development Course content here.</div>
      
     <div class="tags">Tags: </div>
-    <div class="table-heading">Course Description</div>
+    <div class="table-heading course-desc">Course Description</div>
      <div class="table">
         <table class="table">
             <thead class="thead-dark">
@@ -135,33 +135,47 @@
               <tr>
                 <th scope="row"></th>
                 <td>Title</td>
-                <td>Otto</td>
+                <td class="title-content">Otto</td>
               </tr>
               <tr>
                 <th scope="row"></th>
                 <td>Description</td>
-                <td>Thornton</td>
+                <td class="desc-content">Thornton</td>
               </tr>
               <tr>
                 <th scope="row"></th>
                 <td>Link</td>
-                <td>the Bird</td>
+                <td class="link-content">the Bird</td>
               </tr>
               <tr>
                 <th scope="row"></th>
-                <td>Assessment Link</td>
+                <td class="ass-content">Assessment Link</td>
                 <td>the Bird</td>
               </tr>
               <tr>
                 <th scope="row"></th>
                 <td>Soltion Link</td>
-                <td>the Bird</td>
+                <td class="soln-content">the Bird</td>
               </tr>
             </tbody>
           </table>
           
      </div>
-      
+    <script>
+      document.addEventListener('DOMContentLoaded', (e)=>{
+        let data = JSON.parse(localStorage.getItem('data'));
+        console.log(data);
+        let heading = document.querySelector('.heading1').textContent = data.name;
+        // let courseContent = document.querySelector('.course-content').textContent = data.description;
+        let courseDescription = document.querySelector('.desc-content').textContent = data.description;
+        let titleDescription = document.querySelector('.title-content').textContent = data.name;
+        let link = document.querySelector('.link-content').textContent = data.segments['0'].link[0];
+        let assess = document.querySelector('.ass-content').textContent = data.segments['0'].assessmentlink[0];
+        let soln = document.querySelector('.soln-content').textContent = data.segments['0'].solutionlink[0];
+        let videoLink = document.querySelector('.video-link').src = data.segments['0'].link[0];
+        // console.log(data.segments['0'].link[0]);
+      })
+    </script>
     <script src="js/logout.js"></script>
 </body>
 </html>
