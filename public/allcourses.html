@@ -165,6 +165,7 @@
                         </div>`
                     cardsDiv.appendChild(div);
                 }
+
                 
                 // let popular = document.querySelector('.cards-popular');
                 // let my = document.querySelector('.cards-my');
@@ -176,11 +177,14 @@
             })
 
             setTimeout(()=> {
-                document.querySelector('.btn-click').addEventListener('click', (e)=> {
+                document.querySelector('.btn-click').addEventListener('click' ,async  function (e) {
                     console.log('clickingngngn');
+                    let id=this.getAttribute('id')
+                    let data = await connection(`course/${id}`)
                     window.location.href = '/viewcourse.html';
                 })
             }, 2000)
+
             
         </script>
         <script async src="js/logout.js"></script>
