@@ -18,10 +18,10 @@ route.get('/', async (req, res) => {
         }
         
 
-   } catch (error) {
+    } catch (error) {
         console.log(error);
         res.status(400).json({ error });
-   } 
+    } 
 });
 
 route.post('/',express.json(), async (req, res) => {

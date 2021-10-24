@@ -14,17 +14,17 @@ route.get('/', async (req, res) => {
             userMap.push(user);
         });
 
-        return res.send({user: userMap});
+        return res.json({user: userMap});
     
     } catch (error) {
         console.error(error);
-        res.status(404).json({error});
+        res.status(500).json({error});
     }
 })
 
 route.post('/add', express.json(), async (req, res) => {
     const {segement, flashcards, ...data} = req.body;
-    console.log(req.body);
+    // console.log(req.body);
     try {
 
         let course = await Course.create({
@@ -40,8 +40,25 @@ route.post('/add', express.json(), async (req, res) => {
         
     } catch (error) {
         console.error(error);
-        return res.status(400).json({error});
+        return res.status(500).json({error});
     }
 })
+
+
+// GET -> (:id) => Get us a specific course
+route.get('/:id', express.json(), async (req, res) => {
+    try {
+        let crs = await Course.findById(req.params.id);
+        if(!crs){
+            return res.json({msg: "Course not found"});
+        }
+        return res.json(crs);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({error});
+    }
+})
+
+
 
 module.exports = route;
