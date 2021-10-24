@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const {CourseSchema} = require('./course.js');
 const CourseSegmentSchema = require('./coursesegment.schema.js');
+const EventSchema = require('./event.schema');
 
 const UserSchema = new Schema({
     name: String,
