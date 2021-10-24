@@ -171,7 +171,7 @@
             setTimeout(()=> {
                 document.querySelector('.btn-click').addEventListener('click' ,async function (e) {
                     console.log('clickingngngn');
-                    let id=this.getAttribute('id')
+                    let id = this.getAttribute('id');
                     let data = await connect(`course/${id}`);
                     console.log(data);
                     localStorage.setItem('data', JSON.stringify({...data}));
