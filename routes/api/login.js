@@ -1,8 +1,12 @@
 const express = require('express');
 const User = require('../../models/userauth.model');
+const UserData = require('../../models/user');
 const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv').config({ path: '../../.env' });
 const bcrypt = require('bcrypt');
+// const CourseSchema = require('../../models/course');
+// const NotificationSchema = require('../../models/notification.schema');
+// const EventSchema = require('../../models/event.schema');
 
 const route = express.Router();
 
@@ -16,6 +20,20 @@ route.post('/',express.json(), async (req, res) => {
     console.log(req.body);
     try {
         const user = await User.findOne({ email });
+        const name = user.name;
+        const identity = user._id;
+        const new_user = await UserData.create({
+            name,
+            bio: '',
+            recents: [],
+            courses: [],
+            usermadecourses: [],
+            notifications: [],
+            events: [],
+            user_id: identity,
+            friends: []
+        });
+
         if (user) {
             const auth = await bcrypt.compare(password, user.password);
             if (!auth) {

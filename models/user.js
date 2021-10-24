@@ -7,20 +7,21 @@ const EventSchema = require('./event.schema');
 const UserSchema = new Schema({
     name: String,
     bio : String,
-    recents: [CourseSchema._id],
-    courses : [CourseSchema._id],
-    usermadecourses : [CourseSchema._id],
+    recents: [CourseSchema.pick(['_id'])],
+    courses : [CourseSchema.pick(['_id'])],
+    usermadecourses : [CourseSchema.pick(['_id'])],
     notifications : [NotificationSchema],
-    events : [EventSchema]
+    events : [EventSchema],
+    user_id: String
 }, {
     timestamps : true
 });
 
 UserSchema.add({
-    friends : [UserSchema._id],
+    friends : [UserSchema.pick(['_id'])],
 });
 // TODO : Added unique id
 
 const User = mongoose.model('user', UserSchema);
 
-module.exports = {User, UserSchema};
+module.exports = User;

@@ -1,5 +1,5 @@
 const express = require('express');
-const User = require('../../models/user');
+const {User} = require('../../models/user');
 const { userID } = require('../../middleware/auth');
 
 
@@ -8,7 +8,7 @@ const route = express.Router();
 route.get('/', userID, async (req, res) => {
     let user_id = req.user_id;
     try {
-        let users = await User.findOne({ _id: user_id });
+        let users = await User.findOne({ user_id });
         if(users){
             return res.status(200).json(users);
         }
@@ -23,7 +23,7 @@ route.get('/', userID, async (req, res) => {
 route.get('/friends/:friend_id', async (req, res) => {
     let friend_id = req.params.friend_id;
     try {
-        let friend = await User.findOne({ _id :friend_id });
+        let friend = await User.findOne({ user_id :friend_id });
         if(friend){
             return res.status(200).json(friend);
         }
@@ -38,7 +38,7 @@ route.get('/friends/:friend_id', async (req, res) => {
 route.get('/notifications', userID ,async (req, res) => {
     let _id = req.user_id;
     try {
-        let user = await User.findOne({ _id });
+        let user = await User.findOne({ user_id });
         if(user){
             return res.status(200).json({notif : user.notifications});
         }
@@ -51,3 +51,5 @@ route.get('/notifications', userID ,async (req, res) => {
         return;
     }
 })
+
+module.exports = route;
