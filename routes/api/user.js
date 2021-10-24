@@ -35,6 +35,18 @@ route.get('/friends/:friend_id', async (req, res) => {
     }
 })
 
+route.put('/friends/:friend_id', async (req, res) => {
+    let friend_id = req.params.friend_id;
+    try {
+        let friend = await User.findOne({ user_id :friend_id });
+        
+        // unshift friends prashubh
+    } catch (error) {
+        console.error(error);
+        res.status(400).json({error});
+    }
+})
+
 route.get('/notifications', userID ,async (req, res) => {
     let _id = req.user_id;
     try {
