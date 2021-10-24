@@ -128,14 +128,15 @@
                 return data;
             }
             
-            function connection(dest) {
-                connect(dest).then(response => {
-                return response.user;
-                }).catch(err => console.log(err));
+            async function connection(dest) {
+                let data = await connect(dest);
+                console.log(data, "data");
+                return data.user;
             }
             let idx = 0;
             async function call(cards){
-                let data = connection('course');
+                let data = await connection('course');
+                console.log(data, "user");
                 for(let i=0; i<4; i++){
                     let div = document.createElement('div');
                     div.classList.add('card');
@@ -148,7 +149,7 @@
                 }
             }
 
-            document.addEventListener('DOMContentLoaded', (e)=>{
+            window.addEventListener('load', (e)=>{
                 let cardsDiv = document.querySelector('.cards-recent');
                 for(let i=0; i<4; i++){
                     let div = document.createElement('div');

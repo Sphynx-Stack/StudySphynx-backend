@@ -131,16 +131,16 @@
                 return data;
             }
             
-            function connection(dest) {
-                connect(dest).then(response => {
-                return response.user;
-                }).catch(err => console.log(err));
+            async function connection(dest) {
+                let data = await connect(dest);
+                console.log(data, "data");
+                return data.user;
             }
             let idx = 0;
          
-            document.addEventListener('DOMContentLoaded', (e)=>{
+            document.addEventListener('DOMContentLoaded', async(e)=>{
                 let cardsDiv = document.querySelector('.cards-recent');
-                let data = connection('course');
+                let data = await connection('course');
 
                 
                 for(let j=0; j<12; j++){   
