@@ -127,7 +127,7 @@
 					<h2>Our Courses</h2>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row courses-box">
 				<div class="col-md-6 animate-box">
 					<div class="course">
 						<a href="#" class="course-img" style="background-image: url(images/project-1.jpg);">
@@ -139,7 +139,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 animate-box">
+				<!-- <div class="col-md-6 animate-box">
 					<div class="course">
 						<a href="#" class="course-img" style="background-image: url(images/project-2.jpg);">
 						</a>
@@ -193,7 +193,7 @@
 							<span><a href="pricing.html" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
@@ -286,22 +286,24 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 	<script>
-    var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
 
-    // default example
-    simplyCountdown('.simply-countdown-one', {
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate()
-    });
+	document.addEventListener('DOMContentLoaded', async (e) => {
+		// for(let i = 0; i < 6; i++){
+			
+		// }
+		 document.querySelector('.courses-box').innerHTML = `<div class="col-md-6 animate-box">
+					<div class="course">
+						<a href="#" class="course-img" style="background-image: url(images/project-1.jpg);">
+						</a>
+						<div class="desc">
+							<h3><a href="#">Web Master</a></h3>
+							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<span><a href="pricing.html" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+						</div>
+					</div>
+				</div>`;
+	})
 
-    //jQuery example
-    $('#simply-countdown-losange').simplyCountdown({
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate(),
-        enableUtc: false
-    });
 	</script>
 	</body>
 </html>

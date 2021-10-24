@@ -9,7 +9,7 @@ const UserSchema = new Schema({
     recents: [CourseSchema._id],
     friends : [UserSchema._id],
     courses : [CourseSchema._id],
-    usermadecourses = [CourseSchema._id],
+    usermadecourses : [CourseSchema._id],
     notifications : [NotificationSchema],
     events : [EventSchema]
 }, {
