@@ -220,22 +220,22 @@
             ]
         },
         {
-            "name" : "",
-            "description" : "",
-            "tags" : "",
+            "name" : "UPSC Preparation",
+            "description" : "UPSC Preparation course has been purposely designed to help students prepare through a step-up approach. It is also a meticulously designed IAS Study Plan to clear UPSC exam by keeping one on track towards covering the UPSC syllabus extensively from NCERT to ADVANCE level.         ",
+            "tags" : ["UPSC","IAS"],
             "segments" : [
                 {
-                    "title": "",
-                    "description" : "",
-                    "link" : [""],
-                    "assessmentlink" : [""],
-                    "solutionlink" : [""]
+                    "title": "History",
+                    "description" : "History is included in the General Studies Paper I in the UPSC Main and General Studies Paper in UPSC CSE Prelims. Our course provides an extensive in depth coverage of history to help you score full in this section.",
+                    "link" : ["https://www.youtube.com/watch?v=2ty5th9QTaQ"],
+                    "assessmentlink" : ["http://testseries.drishtiias.in/"],
+                    "solutionlink" : ["https://byjus.com/free-ias-prep/upsc-exam-online-preparation/ncert-notes/"]
                 }
             ],
             "flashcards" : [
                 {
-                    "front" : "",
-                    "back" : ""
+                    "front" : "History for UPSC",
+                    "back" : "History is included in the General Studies Paper I in the UPSC Main and General Studies Paper in UPSC CSE Prelims. About 17-22% of questions in Prelims are asked from History. Questions on important landmarks can be asked in the interview, as well. Further, history is one of the extremely vast subjects when it comes to the syllabus. Hence, the history syllabus for UPSC must be strategically covered so as to ensure you reap maximum benefits from your preparation.                    "
                 }
             ],
             "notes" : "",
@@ -254,22 +254,22 @@
             ]
         },
         {
-            "name" : "",
-            "description" : "",
-            "tags" : "",
+            "name" : "Javascript",
+            "description" : "JavaScript is the world's most popular programming language. JavaScript is the programming language of the Web. JavaScript is easy to learn. ",
+            "tags" : ["JS","Javascript"],
             "segments" : [
                 {
-                    "title": "",
-                    "description" : "",
-                    "link" : [""],
-                    "assessmentlink" : [""],
-                    "solutionlink" : [""]
+                    "title": "Javascript",
+                    "description" : "JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-brack.et syntax, dynamic typing, prototype-based object-orientation, and first-class functions. This course will help you learn it.",
+                    "link" : ["https://www.youtube.com/watch?v=hKB-YGF14SY"],
+                    "assessmentlink" : ["https://www.w3schools.com/js/js_quiz.asp"],
+                    "solutionlink" : ["https://www.w3schools.com/js/"]
                 }
             ],
             "flashcards" : [
                 {
-                    "front" : "",
-                    "back" : ""
+                    "front" : "What is Javascript",
+                    "back" : "JavaScript is high-level, often just-in-time compiled, and multi-paradigm."
                 }
             ],
             "notes" : "",
