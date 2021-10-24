@@ -10,7 +10,6 @@ const CourseSchema = new Schema({
     tags : [String],
     segments : [CourseSegmentSchema],
     flashcards : [FlashcardSchema],
-    notes : String,
     rating : Number,
     reviews : [ReviewSchema]
 }, {

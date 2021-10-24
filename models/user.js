@@ -10,6 +10,7 @@ const UserSchema = new Schema({
     recents: [CourseSchema.pick(['_id'])],
     courses : [CourseSchema.pick(['_id'])],
     usermadecourses : [CourseSchema.pick(['_id'])],
+    notes : [NoteSchema],
     notifications : [NotificationSchema],
     events : [EventSchema],
     user_id: String
