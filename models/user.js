@@ -7,7 +7,6 @@ const UserSchema = new Schema({
     name: String,
     bio : String,
     recents: [CourseSchema._id],
-    friends : [UserSchema._id],
     courses : [CourseSchema._id],
     usermadecourses : [CourseSchema._id],
     notifications : [NotificationSchema],
@@ -16,6 +15,9 @@ const UserSchema = new Schema({
     timestamps : true
 });
 
+UserSchema.add({
+    friends : [UserSchema._id],
+});
 // TODO : Added unique id
 
 const User = mongoose.model('user', UserSchema);
