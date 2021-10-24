@@ -6,4 +6,5 @@
             /courses_add
             
         /user -> User Landing
-            /friend/:frieind_id ->
+            /:user_id -> get -> get a prticular user
+            /friend/:frieind_id -> get -> get all the friends
