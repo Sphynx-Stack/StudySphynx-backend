@@ -7,14 +7,14 @@ const route = express.Router();
 
 route.get('/', async (req, res) => {
     try {
-        let userMap = {};
+        let userMap = [];
         let users = await Course.find({});
         
         users.forEach(user => {
-            userMap[user._id] = user;
+            userMap.push(user);
         });
 
-        return res.send(userMap);
+        return res.send({user: userMap});
     
     } catch (error) {
         console.error(error);

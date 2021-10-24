@@ -129,10 +129,10 @@
             
             function connection(dest) {
                 connect(dest).then(response => {
-                return response;
+                return response.user;
                 }).catch(err => console.log(err));
             }
-          
+            let idx = 0;
             async function call(cards){
                 let data = connection('course');
                 for(let i=0; i<4; i++){
@@ -140,8 +140,8 @@
                     div.classList.add('card');
 
                     div.innerHTML = `<div class="content bg-light">
-                            <h2 class="title bg-light">Mountain View</h2>
-                            <p class="copy text-secondary">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p><button class="btn">View Trips</button>
+                            <h2 class="title bg-light">${data[idx].name}</h2>
+                            <p class="copy text-secondary">${data[idx++].description}</p><button class="btn">View Trips</button>
                         </div>`
                     cards.appendChild(div);
                 }
