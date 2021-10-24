@@ -89,7 +89,7 @@
            <div class="item1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbfqC-oHC_30DesHfGcnQ12MNDiewrzy2XnA&usqp=CAU" alt="project"></div>
            <br><br>
            <div class="item">
-                    <form class="row g-3">
+                    <form class="row g-3 create-course">
                           <div class="col-md-8">
                             <label for="name" class="form-label">Name of the Course</label>
                             <input type="text" class="form-control" id="name">
@@ -128,7 +128,7 @@
                                       </div>
 
                           </div>
-                          <button type="button" class="btn btn-primary">Add Course</button>
+                          <button type="submit" class="btn btn-primary">Add Course</button>
 
 
                           
@@ -141,7 +141,50 @@
 
 </div>
          
-          
+        <script>
+			async function connect(d1) {
+                const res = await fetch(`/api/course/add`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(d1)
+                });
+
+                const data = await res.json();
+                return data;
+            }
+
+            function connection(data) {
+                connect(data).then(response => {
+					return response;
+				}).catch(err => console.log(err));
+            }
+
+			document.querySelector('.create-course').addEventListener('submit', (e)=> 
+			{
+				e.preventDefault();
+				console.log('creationnn');
+				let name = document.querySelector('#name').value;
+				let description = document.querySelector('#Description').value;
+				let tags = document.querySelector('#Tags').value;
+				let title = document.querySelector('#title').value;
+				let descTopic = document.querySelector('#Description-topic').value;
+				let link = document.querySelector('#Link').value;
+				let assessmentLink = document.querySelector('#assessmentlink').value;
+				let solLink = document.querySelector('#Solutionlink').value;
+
+				console.log(name, description, tags, title, descTopic, link, assessmentLink, solLink);
+				let segments = {
+					title,
+					description,
+					link,
+					assessmentLink,
+					solutionlink: solLink
+				}
+				connection({name, description, tags, segments, flashcards:[], notes:'', rating:4});
+			})
+		</script>
         <script src="js/logout.js"></script>
 </body>
 </html>

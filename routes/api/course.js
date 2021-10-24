@@ -37,7 +37,7 @@ route.post('/add', express.json(), async (req, res) => {
         });
 
         console.log('successfully added a course');
-        res.status(200).json(course);
+        res.status(200).json({course, redirect : 'mycourses.html'});
         return;
         
     } catch (error) {
