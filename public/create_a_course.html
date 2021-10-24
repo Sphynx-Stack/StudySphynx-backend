@@ -32,11 +32,11 @@
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
-
+  <link rel="stylesheet" href="css/form.css">
   <style>
-    .change-card{
+    /* .change-card{
       min-height: 64vh;
-    }
+    } */
   </style>
 
 </head>
@@ -83,28 +83,22 @@
           <h1> Create a course </h1>
 
 
-          <form id="form" method="POST" action="save_data.php">
-            <input type="text" name="text_field[]">
-            <button type="submit">SUBMIT</button>
-        </form>
-        <button onclick="add_field()">ADD FIELD</button>
-        <script>
-            function add_field(){
 
-                var x = document.getElementById("form");
-                // create an input field to insert
-                var new_field = document.createElement("input");
-                // set input field data type to text
-                new_field.setAttribute("type", "text");
-                // set input field name 
-                new_field.setAttribute("name", "text_field[]");
-                // select last position to insert element before it
-                var pos = x.childElementCount;
+          <div class="container1">
 
-                // insert element
-                x.insertBefore(new_field, x.childNodes[pos]);
-            }
-        </script>
+           <div class="item1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbfqC-oHC_30DesHfGcnQ12MNDiewrzy2XnA&usqp=CAU" alt="project"></div>
+
+           <div class="item">
+
+           </div>
+
+          </div>
+
+
+
+
+           
+          
         <script src="js/logout.js"></script>
 </body>
 </html>
