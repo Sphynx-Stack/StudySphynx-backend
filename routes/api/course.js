@@ -26,15 +26,6 @@ route.post('/add', express.json(), async (req, res) => {
     const {segement, flashcards, ...data} = req.body;
     console.log(req.body);
     try {
-        // let arr = [];
-        // segement.forEach(s => {
-        //     arr.push(new CourseSegmentSchema({...s}));
-        // })
-
-        // let flash = [];
-        // flashcards.forEach(flashcard => {
-            // flash.push(new Flashcard({...flashcard}));
-        // })
 
         let course = await Course.create({
             ...data,

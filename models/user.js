@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const {CourseSchema} = require('./course.js');
 const CourseSegmentSchema = require('./coursesegment.schema.js');
-const EventSchema = require('./event.schema');
 
 const UserSchema = new Schema({
     name: String,
@@ -16,6 +15,8 @@ const UserSchema = new Schema({
 }, {
     timestamps : true
 });
+
+// TODO : Added unique id
 
 const User = mongoose.model('user', UserSchema);
 
