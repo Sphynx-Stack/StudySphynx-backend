@@ -92,12 +92,12 @@
 <br><br>
         
         <div class="recent">
-            <h3>My Recent Courses </h3> 
+            <h3>ALL COURSES </h3> 
             <div class="cards-recent">
             </div>
         </div>
         
-        <div class="popular-courses">
+        <!-- <div class="popular-courses">
             <h3>Popular Courses</h3>
             <div class="cards-popular">
 
@@ -116,44 +116,52 @@
             <div class="cards-created">
 
             </div>
-        </div>
+        </div> -->
 
         <script>
-            function call(cards){
-                for(let i=0; i<4; i++){
-                    let div = document.createElement('div');
-                    div.classList.add('card');
+            // function call(cards){
+            //     for(let i=0; i<12; i++){
+            //         let div = document.createElement('div');
+            //         div.classList.add('card');
 
-                    div.innerHTML = `<div class="content bg-light">
-                            <h2 class="title bg-light">Mountain View</h2>
-                            <p class="copy text-secondary">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p><button class="btn">View Trips</button>
-                        </div>`
-                    cards.appendChild(div);
-                }
-            }
+            //         div.innerHTML = `<div class="content bg-light">
+            //                 <h2 class="title bg-light">Mountain View</h2>
+            //                 <p class="copy text-secondary">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p><button class="btn">View Trips</button>
+            //             </div>`
+            //         cards.appendChild(div);
+            //     }
+            // }
 
             document.addEventListener('DOMContentLoaded', (e)=>{
                 let cardsDiv = document.querySelector('.cards-recent');
-                for(let i=0; i<4; i++){
+             
+                
+                   for(let j=0; j<3; j++){
+                    let div2 = document.createElement('div');
+                    for(let i=0; i<4; i++){
                     let div = document.createElement('div');
                     div.classList.add('card');
                     div.innerHTML = `<div class="content bg-light" >
                             <h2 class="title bg-light">Mountain View</h2>
                             <p class="copy text-secondary">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p><button class="btn">View Course</button>
                         </div>`
-                    cardsDiv.appendChild(div);
+                        div2.appendChild(div);
+                } 
+                cardsDiv.appendChild(div2);
                 }
                 
-                let popular = document.querySelector('.cards-popular');
-                let my = document.querySelector('.cards-my');
-                let created = document.querySelector('.cards-created');
+                // let popular = document.querySelector('.cards-popular');
+                // let my = document.querySelector('.cards-my');
+                // let created = document.querySelector('.cards-created');
 
-                call(popular);
-                call(my);
-                call(created);
+                // call(popular);
+                // call(my);
+                // call(created);
             })
 
         </script>
         <script src="js/logout.js"></script>
+
+
 </body>
 </html>
