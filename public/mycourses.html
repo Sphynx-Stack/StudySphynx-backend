@@ -149,7 +149,7 @@
                     div.classList.add('card');
                     div.innerHTML = `<div class="content bg-light">
                             <h2 class="title bg-light">${data[idx].name}</h2>
-                            <p class="copy text-secondary">${data[idx++].description}</p><button class="btn">View Course</button>
+                            <p class="copy text-secondary">${data[idx++].description}</p><button id=${data[idx]._id} class="btn btn-click">View Course</button>
                         </div>`
                     cardsDiv.appendChild(div);
                 }
@@ -162,6 +162,18 @@
                 // call(my);
                 // call(created);
             })
+
+            setTimeout(()=> {
+                document.querySelector('.btn-click').addEventListener('click' ,async function (e) {
+                    console.log('clickingngngn');
+                    let id=this.getAttribute('id')
+                    let data = await connect(`course/${id}`);
+                    console.log(data);
+                    localStorage.setItem('data', JSON.stringify({...data}));
+                    window.location.href = '/viewcourse.html';
+                })
+            }, 3000)
+
 
         </script>
         <script src="js/logout.js"></script>
