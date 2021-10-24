@@ -87,7 +87,7 @@ route.post('/:id', [userID ,express.json()], async (req, res) => {
 })
 
 
-//Recent -> my course
+// GET => () => Getting all Recent Courses
 route.get('/recents', [userID, express.json()], async(req, res)=>{
     try {
         let user = await User.findOne({ user_id : req.user_id });
@@ -95,6 +95,20 @@ route.get('/recents', [userID, express.json()], async(req, res)=>{
             return res.json({msg: "User not found"});
         }
         return res.json(user.recents);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({error});
+    }
+})
+
+// GET => () => Getting all of my courses
+route.get('/mycourses', [userID, express.json()], async(req, res)=>{
+    try {
+        let user = await User.findOne({ user_id : req.user_id });
+        if(!user){
+            return res.json({msg: "User not found"});
+        }
+        return res.json(user.courses);
     } catch (error) {
         console.error(error);
         return res.status(500).json({error});
