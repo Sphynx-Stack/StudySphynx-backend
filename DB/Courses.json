@@ -1,3 +1,325 @@
 {
-    
+    "courses": [
+        {
+            "name" : "Web Development",
+            "description" : "Introduction to Web Development using JavaScript, Extensive coverage of NodeJS, Project-Based Learning Approach, Lessons on Deploying your Application, Basics & Advanced Topics for Interviews",
+            "tags" : ["JS", "HTML", "CSS", "UI", "UX"],
+            "segments" : [
+                {
+                    "title": "Introduction to Web and HTML",
+                    "description" : "Basics of Networking and HTML",
+                    "link" : ["https://www.youtube.com/watch?v=Pawk7o9Tsds"],
+                    "assessmentlink" : ["https://www.youtube.com/watch?v=Pawk7o9Tsds"],
+                    "solutionlink" : ["https://www.youtube.com/watch?v=Pawk7o9Tsds"]
+                },
+                {
+                    "title": "Introduction to CSS",
+                    "description" : "Basics of Styling and CSS",
+                    "link" : ["https://www.youtube.com/watch?v=Pawk7o9Tsds"],
+                    "assessmentlink" : ["https://www.youtube.com/watch?v=Pawk7o9Tsds"],
+                    "solutionlink" : ["https://www.youtube.com/watch?v=Pawk7o9Tsds"]
+                },
+                {
+                    "title": "Introduction to JS",
+                    "description" : "Basics of JavaScript",
+                    "link" : ["https://www.youtube.com/watch?v=Pawk7o9Tsds"],
+                    "assessmentlink" : ["https://www.youtube.com/watch?v=Pawk7o9Tsds"],
+                    "solutionlink" : ["https://www.youtube.com/watch?v=Pawk7o9Tsds"]
+                },
+                {
+                    "title": "Expertise of Javascript",
+                    "description" : "Learning nodeJS and ExpressJS",
+                    "link" : ["https://www.youtube.com/watch?v=Pawk7o9Tsds"],
+                    "assessmentlink" : ["https://www.youtube.com/watch?v=Pawk7o9Tsds"],
+                    "solutionlink" : ["https://www.youtube.com/watch?v=Pawk7o9Tsds"]
+                }
+            ],
+            "flashcards" : [
+                {
+                    "front" : "Let's Learn Web-Development",
+                    "back" : " As a part of these online Web Development classes, the students will start off with the fundamentals of building basic websites and will go on to create more functional and complex portals. The course will start with topics such as HTML, CSS, and JS and then move on to important concepts such as version control, databases, Node.Js and advanced topics such as security. "
+                }
+            ],
+            "notes" : "",
+            "rating" : 4.5,
+            "reviews" : [
+                {
+                    "rating" : 4,
+                    "title" : "Awesome Course",
+                    "description" : "This course helped me land my first job."
+                },
+                {
+                    "rating" : 5,
+                    "title" : "Well versed course",
+                    "description" : "This course helped me upgrade my job."
+                }
+            ]
+        },
+        {
+            "name" : "Machine Learning",
+            "description" : "The course is broadly divided in 7 categories, and covers many topics from Coding Blocks Data Science & Deep Learning Course., Introduction to Machine Learning, Supervised Learning Algorithms, Unsupervised Learning, Deep Learning, Deep Learning in Computer Vision, Deep Learning Natural Language Processing, Reinforcement Learning",
+            "tags" : ["ML","Python"],
+            "segments" : [
+                {
+                    "title": "Python Basics",
+                    "description" : "Learn the basics of python 3",
+                    "link" : ["https://www.youtube.com/watch?v=_uQrJ0TkZlc"],
+                    "assessmentlink" : ["https://www.youtube.com/watch?v=_uQrJ0TkZlc"],
+                    "solutionlink" : ["https://www.youtube.com/watch?v=_uQrJ0TkZlc"]
+                },
+                {
+                    "title": "Introduction to Machine Learning",
+                    "description" : "Learning the baiscs",
+                    "link" : ["https://www.youtube.com/watch?v=_uQrJ0TkZlc"],
+                    "assessmentlink" : ["https://www.youtube.com/watch?v=_uQrJ0TkZlc"],
+                    "solutionlink" : ["https://www.youtube.com/watch?v=_uQrJ0TkZlc"]
+                },
+                {
+                    "title": "Algorithms",
+                    "description" : "Learning the baiscs of algorithms",
+                    "link" : ["https://www.youtube.com/watch?v=_uQrJ0TkZlc"],
+                    "assessmentlink" : ["https://www.youtube.com/watch?v=_uQrJ0TkZlc"],
+                    "solutionlink" : ["https://www.youtube.com/watch?v=_uQrJ0TkZlc"]
+                },
+                {
+                    "title": "In depth Analysis",
+                    "description" : "Learning the algorithms in depth",
+                    "link" : ["https://www.youtube.com/watch?v=_uQrJ0TkZlc"],
+                    "assessmentlink" : ["https://www.youtube.com/watch?v=_uQrJ0TkZlc"],
+                    "solutionlink" : ["https://www.youtube.com/watch?v=_uQrJ0TkZlc"]
+                },
+                {
+                    "title": "Unsupervised Learning",
+                    "description" : "Basics of Unsupervised Learning",
+                    "link" : ["https://www.youtube.com/watch?v=_uQrJ0TkZlc"],
+                    "assessmentlink" : ["https://www.youtube.com/watch?v=_uQrJ0TkZlc"],
+                    "solutionlink" : ["https://www.youtube.com/watch?v=_uQrJ0TkZlc"]
+                }
+            ],
+            "flashcards" : [
+                {
+                    "front" : "Introduction to ML",
+                    "back" : "The Machine Learning online course starts with the essentials of Python, gradually moving towards to concepts of advanced algorithms and finally into the cores of Machine Learning. With our key focus being the live projects, we dive deeper into the fundamentals of classical algorithms and deep neural networks enabling the students to work out optimising solutions to the real-world problems. It is just a matter of weeks before the students actually begin building intelligent systems, working on AI algorithms and data crunching."
+                }
+            ],
+            "notes" : "",
+            "rating" : 4.5,
+            "reviews" : [
+                {
+                    "rating" : 4,
+                    "title" : "Awesome Course",
+                    "description" : "This course helped me land my first job."
+                },
+                {
+                    "rating" : 5,
+                    "title" : "Well versed course",
+                    "description" : "This course helped me upgrade my job."
+                }
+            ]
+        },
+        {
+            "name" : "",
+            "description" : "",
+            "tags" : "",
+            "segments" : [
+                {
+                    "title": "",
+                    "description" : "",
+                    "link" : [""],
+                    "assessmentlink" : [""],
+                    "solutionlink" : [""]
+                }
+            ],
+            "flashcards" : [
+                {
+                    "front" : "",
+                    "back" : ""
+                }
+            ],
+            "notes" : "",
+            "rating" : 4.5,
+            "reviews" : [
+                {
+                    "rating" : 4,
+                    "title" : "Awesome Course",
+                    "description" : "This course helped me land my first job."
+                },
+                {
+                    "rating" : 5,
+                    "title" : "Well versed course",
+                    "description" : "This course helped me upgrade my job."
+                }
+            ]
+        },
+        {
+            "name" : "",
+            "description" : "",
+            "tags" : "",
+            "segments" : [
+                {
+                    "title": "",
+                    "description" : "",
+                    "link" : [""],
+                    "assessmentlink" : [""],
+                    "solutionlink" : [""]
+                }
+            ],
+            "flashcards" : [
+                {
+                    "front" : "",
+                    "back" : ""
+                }
+            ],
+            "notes" : "",
+            "rating" : 4.5,
+            "reviews" : [
+                {
+                    "rating" : 4,
+                    "title" : "Awesome Course",
+                    "description" : "This course helped me land my first job."
+                },
+                {
+                    "rating" : 5,
+                    "title" : "Well versed course",
+                    "description" : "This course helped me upgrade my job."
+                }
+            ]
+        },
+        {
+            "name" : "",
+            "description" : "",
+            "tags" : "",
+            "segments" : [
+                {
+                    "title": "",
+                    "description" : "",
+                    "link" : [""],
+                    "assessmentlink" : [""],
+                    "solutionlink" : [""]
+                }
+            ],
+            "flashcards" : [
+                {
+                    "front" : "",
+                    "back" : ""
+                }
+            ],
+            "notes" : "",
+            "rating" : 4.5,
+            "reviews" : [
+                {
+                    "rating" : 4,
+                    "title" : "Awesome Course",
+                    "description" : "This course helped me land my first job."
+                },
+                {
+                    "rating" : 5,
+                    "title" : "Well versed course",
+                    "description" : "This course helped me upgrade my job."
+                }
+            ]
+        },
+        {
+            "name" : "",
+            "description" : "",
+            "tags" : "",
+            "segments" : [
+                {
+                    "title": "",
+                    "description" : "",
+                    "link" : [""],
+                    "assessmentlink" : [""],
+                    "solutionlink" : [""]
+                }
+            ],
+            "flashcards" : [
+                {
+                    "front" : "",
+                    "back" : ""
+                }
+            ],
+            "notes" : "",
+            "rating" : 4.5,
+            "reviews" : [
+                {
+                    "rating" : 4,
+                    "title" : "Awesome Course",
+                    "description" : "This course helped me land my first job."
+                },
+                {
+                    "rating" : 5,
+                    "title" : "Well versed course",
+                    "description" : "This course helped me upgrade my job."
+                }
+            ]
+        },
+        {
+            "name" : "",
+            "description" : "",
+            "tags" : "",
+            "segments" : [
+                {
+                    "title": "",
+                    "description" : "",
+                    "link" : [""],
+                    "assessmentlink" : [""],
+                    "solutionlink" : [""]
+                }
+            ],
+            "flashcards" : [
+                {
+                    "front" : "",
+                    "back" : ""
+                }
+            ],
+            "notes" : "",
+            "rating" : 4.5,
+            "reviews" : [
+                {
+                    "rating" : 4,
+                    "title" : "Awesome Course",
+                    "description" : "This course helped me land my first job."
+                },
+                {
+                    "rating" : 5,
+                    "title" : "Well versed course",
+                    "description" : "This course helped me upgrade my job."
+                }
+            ]
+        },
+        {
+            "name" : "",
+            "description" : "",
+            "tags" : "",
+            "segments" : [
+                {
+                    "title": "",
+                    "description" : "",
+                    "link" : [""],
+                    "assessmentlink" : [""],
+                    "solutionlink" : [""]
+                }
+            ],
+            "flashcards" : [
+                {
+                    "front" : "",
+                    "back" : ""
+                }
+            ],
+            "notes" : "",
+            "rating" : 4.5,
+            "reviews" : [
+                {
+                    "rating" : 4,
+                    "title" : "Awesome Course",
+                    "description" : "This course helped me land my first job."
+                },
+                {
+                    "rating" : 5,
+                    "title" : "Well versed course",
+                    "description" : "This course helped me upgrade my job."
+                }
+            ]
+        }
+    ]
 }
