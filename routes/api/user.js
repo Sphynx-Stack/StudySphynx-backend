@@ -1,9 +1,20 @@
 const express = require('express');
-const {User} = require('../../models/user');
+const User = require('../../models/user');
 const { userID } = require('../../middleware/auth');
 
 
 const route = express.Router();
+
+route.get('/all', userID, async (req, res) => {
+    try {
+        let users = await User.find({});
+        users = users.filter(user => user._id !== req.user_id);
+        return res.status(200).json(users);
+    } catch (error) {
+        console.error(error);
+        res.status(400).json({error: error});
+    }
+})
 
 route.get('/', userID, async (req, res) => {
     let user_id = req.user_id;

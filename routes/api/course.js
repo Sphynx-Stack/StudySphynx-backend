@@ -25,13 +25,13 @@ route.get('/', async (req, res) => {
 })
 
 route.post('/add', express.json(), async (req, res) => {
-    const {segement, flashcards, ...data} = req.body;
+    const {segments, flashcards, ...data} = req.body;
     // console.log(req.body);
     try {
 
         let course = await Course.create({
             ...data,
-            segments: segement,
+            segments,
             flashcards,
             reviews: []
         });

@@ -23,7 +23,7 @@ route.post('/',express.json(), async (req, res) => {
         const name = user.name;
         const identity = user._id;
         const checkUser = await UserData.findOne({ user_id : identity });
-        if(checkUser){
+        if(!checkUser){
             const new_user = await UserData.create({
                 name,
                 bio: '',
