@@ -4,6 +4,11 @@ body {
   padding: 0;
   background: lightgoldenrodyellow;
 }
+.save-button {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+}
 .course-video {
   position: absolute;
   left: 5%;
