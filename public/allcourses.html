@@ -48,7 +48,7 @@
     
         <!-- Theme style  -->
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/card.css">
+        <link rel="stylesheet" href="css/allcourses.css">
     
         <!-- Modernizr JS -->
         <script src="js/modernizr-2.6.2.min.js"></script>
@@ -88,14 +88,16 @@
 			</div>
 		</div>
 	</nav>
-	<div>
+	
 <br><br>
         
-        <div class="recent">
+        
             <h3>ALL COURSES </h3> 
+            
             <div class="cards-recent">
             </div>
-        </div>
+            
+        
         
         <!-- <div class="popular-courses">
             <h3>Popular Courses</h3>
@@ -136,18 +138,19 @@
                 let cardsDiv = document.querySelector('.cards-recent');
              
                 
-                   for(let j=0; j<3; j++){
-                    let div2 = document.createElement('div');
-                    for(let i=0; i<4; i++){
+                   for(let j=0; j<12; j++){
+                   
+                   
                     let div = document.createElement('div');
+
                     div.classList.add('card');
                     div.innerHTML = `<div class="content bg-light" >
                             <h2 class="title bg-light">Mountain View</h2>
                             <p class="copy text-secondary">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p><button class="btn">View Course</button>
                         </div>`
-                        div2.appendChild(div);
-                } 
-                cardsDiv.appendChild(div2);
+                      
+                
+                cardsDiv.appendChild(div);
                 }
                 
                 // let popular = document.querySelector('.cards-popular');
