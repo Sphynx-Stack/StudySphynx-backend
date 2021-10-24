@@ -75,9 +75,26 @@ route.post('/:id', [userID ,express.json()], async (req, res) => {
         if(user.courses.filter((course)=> course.id.toString() === req.params.id)){
             return res.status(400).json({msg: 'Course already taken.'});
         }
-        user.courses.unshift({req.params.id});
+        user.courses.unshift(req.params.id);
+        user.recents.unshift(req.params.id);
+        user.recents.slice(0,4);
         await user.save();
         return res.json({user});
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({error});
+    }
+})
+
+
+//Recent -> my course
+route.get('/recents', [userID, express.json()], async(req, res)=>{
+    try {
+        let user = await User.findOne({ user_id : req.user_id });
+        if(!user){
+            return res.json({msg: "User not found"});
+        }
+        return res.json(user.recents);
     } catch (error) {
         console.error(error);
         return res.status(500).json({error});
