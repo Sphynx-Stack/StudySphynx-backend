@@ -147,23 +147,25 @@
 
                     div.innerHTML = `<div class="content bg-light">
                             <h2 class="title bg-light">${data[idx].name}</h2>
-                            <p class="copy text-secondary">${data[idx++].description}</p><button class="btn">View Course</button>
+                            <p class="copy text-secondary">${data[idx].description}</p><button id=${data[idx]._id} class="btn btn-click">View Course</button>
                         </div>`
+                        idx++;
                     cards.appendChild(div);
                 }
             }
 
             window.addEventListener('load', (e)=>{
                 let cardsDiv = document.querySelector('.cards-recent');
-                for(let i=0; i<4; i++){
-                    let div = document.createElement('div');
-                    div.classList.add('card');
-                    div.innerHTML = `<div class="content bg-light" >
-                            <h2 class="title bg-light">Mountain View</h2>
-                            <p class="copy text-secondary">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p><button class="btn">View Course</button>
-                        </div>`
-                    cardsDiv.appendChild(div);
-                }
+                // for(let i=0; i<4; i++){
+                //     let div = document.createElement('div');
+                //     div.classList.add('card');
+                //     div.innerHTML = `<div class="content bg-light" >
+                //             <h2 class="title bg-light">Mountain View</h2>
+                //             <p class="copy text-secondary">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p><button class="btn">View Course</button>
+                //         </div>`
+                //     cardsDiv.appendChild(div);
+                // }
+                call(cardsDiv);
                 
                 let popular = document.querySelector('.cards-popular');
                 let my = document.querySelector('.cards-my');
@@ -173,6 +175,27 @@
                 call(my);
                 call(created);
             })
+
+            setTimeout(()=> {
+                let buttons = document.querySelectorAll('.btn-click');
+
+                for(const button of buttons){
+                    button.addEventListener('click' ,async function (e) {
+                        // console.log(buttons.filter(x => x === e.target), e.target);
+                        console.log('clickingngngn');
+                        let id=this.getAttribute('id')
+                        let data = await connect(`course/${id}`);
+                        console.log(data);
+                        let copy = localStorage.getItem('data');
+                        if(copy){
+                            localStorage.removeItem('data');
+                        }
+                        copy = data;
+                        localStorage.setItem('data', JSON.stringify(copy));
+                        window.location.href = '/viewcourse.html';
+                    })
+                }
+            }, 2000)
 
         </script>
         <script src="js/logout.js"></script>
