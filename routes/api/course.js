@@ -1,5 +1,7 @@
 const express = require('express');
+const { userID } = require('../../middleware/auth');
 const { Course } = require('../../models/course');
+const { User } = require('../../models/user');
 // const CourseSegmentSchema = require('../../models/coursesegment.schema');
 // const Flashcard = require('../../models/flashcard.schema');
 
@@ -59,6 +61,27 @@ route.get('/:id', express.json(), async (req, res) => {
     }
 })
 
-
+// POST -> (:id) => Select a course for a user
+route.post('/:id', [userID ,express.json()], async (req, res) => {
+    try {
+        let user = await User.findOne({ user_id : req.user_id });
+        if(!user){
+            return res.json({msg: "User not found"});
+        }
+        let crs = await Course.findById(req.params.id);
+        if(!crs){
+            return res.json({msg: "Course not found"});
+        }
+        if(user.courses.filter((course)=> course.id.toString() === req.params.id)){
+            return res.status(400).json({msg: 'Course already taken.'});
+        }
+        user.courses.unshift({req.params.id});
+        await user.save();
+        return res.json({user});
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({error});
+    }
+})
 
 module.exports = route;
