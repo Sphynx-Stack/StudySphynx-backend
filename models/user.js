@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const {CourseSchema} = require('./course.js');
+const NoteSchema = require('/note.schema.js')
 const NotificationSchema = require('./notification.schema.js');
 const EventSchema = require('./event.schema');
 
