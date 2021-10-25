@@ -206,19 +206,15 @@
             const data = await res.json();
             return data;
           }
-          
-          function connection(dest) {
-            connect(dest).then(response => {
-              return response;
-            }).catch(err => console.log(err));
-          }
-          
-          document.addEventListener('DOMContentLoaded', (e) => {
-            let data = connection('user');
+          let arr = ['web developer', 'data-analyst', 'fullstack dev', 'interested in game programmer', 'Like playing cricket', 'watching movies', 'reading books', 'listening songs', 'fitness enthusiast', 'yoga master', 'cooking', 'dancing & singing', 'watching formula-1'];
+          document.addEventListener('DOMContentLoaded', async (e) => {
+            let data = await connect('user');
+            let r1 = Math.floor(Math.random(0, arr.length));
+            let r2 = Math.ceil(Math.random(0, arr.length));
             document.querySelector('.profile-name').textContent = data.name;
             document.querySelector('.name-text').textContent = data.name;
             document.querySelector('.profile-bio').textContent = data.bio;
-            document.querySelector('.bio-text').textContent = data.bio;
+            document.querySelector('.bio-text').textContent = `${data.bio}  ${arr[r1]} and a ${arr[r2]}`;
           })
           </script>
     <script src="js/logout.js"></script>

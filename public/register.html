@@ -89,7 +89,12 @@
 
             function connection(data ,dest) {
                 connect(data, dest).then(response => {
-                    window.location.href = response.redirect;
+					if(response.redirect){
+						window.location.href = response.redirect;
+					}
+					else{
+						window.location.href = 'pricing.html';
+					}
                     console.log(response.msg);
                 }).catch(err => console.log(err));
             }
